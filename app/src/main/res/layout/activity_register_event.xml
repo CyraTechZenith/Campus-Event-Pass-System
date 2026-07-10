@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCF7FF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ================= HEADER ================= -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/back"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="@string/event_registration"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <!-- ================= BODY ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Event Name -->
+
+            <TextView
+                android:id="@+id/tvEventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:text="@string/event_name"
+                android:textColor="#5A2D8A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Profile -->
+
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_avatar"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_account_circle_24" />
+
+                <TextView
+                    android:id="@+id/tvInitials"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_avatar"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- Student Name -->
+
+            <TextView
+                android:id="@+id/tvStudentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/student_name"
+                android:textColor="#2F2346"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Roll -->
+
+            <TextView
+                android:id="@+id/tvStudentInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:text="@string/roll_number_format"
+                android:textColor="#7D7D7D"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="#E5E5E5" />
+
+            <!-- ================= CONTACT DETAILS ================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/contact_details"
+                android:textColor="#5A3E85"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <!-- Email -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email"
+                        android:textColor="#2F2346"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:drawableStart="@drawable/baseline_email_24"
+                        android:drawablePadding="12dp"
+                        android:hint="@string/enter_email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="16dp"
+                        app:drawableTint="#F65AA5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/contact_number"
+                        android:textColor="#2F2346"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etContactNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:drawableStart="@drawable/baseline_phone_24"
+                        android:drawablePadding="12dp"
+                        android:hint="@string/enter_contact_number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:paddingHorizontal="16dp"
+                        app:drawableTint="#F65AA5" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= BUTTONS ================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_edittext"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="#5A3E85"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/gradient_button"
+                    android:text="@string/register"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

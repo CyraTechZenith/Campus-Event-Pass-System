@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF8FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ================= TOP BAR ================= -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="42dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:padding="6dp"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="@string/event_details"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <!-- ================= EVENT BANNER ================= -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imgBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_event_banner" />
+
+            </FrameLayout>
+
+            <!-- ================= EVENT NAME ================= -->
+
+            <TextView
+                android:id="@+id/tvEventName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/event_name"
+                android:textColor="#2F2346"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- ================= INFO CARD ================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/info_card"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_calendar_month_24"
+                        app:tint="#7A3FD4" />
+
+                    <TextView
+                        android:id="@+id/tvEventDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/date_and_time"
+                        android:textColor="#3B3350"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_location_on_24"
+                        app:tint="#7A3FD4" />
+
+                    <TextView
+                        android:id="@+id/tvEventVenue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/venue"
+                        android:textColor="#3B3350"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ================= DESCRIPTION ================= -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/info_card"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
+                    android:textColor="#2F2346"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/event_description"
+                    android:textColor="#494949"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <!-- ================= REGISTER ================= -->
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/gradient_button"
+                android:text="@string/register_event"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

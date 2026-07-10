@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuProfile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/my_profile"/>
+
+    <item
+        android:id="@+id/menuMyRegistrations"
+        android:icon="@drawable/baseline_event_available_24"
+        android:title="@string/my_registrations"/>
+
+    <item
+        android:id="@+id/menuLogout"
+        android:icon="@drawable/baseline_power_settings_new_24"
+        android:title="@string/logout"/>
+
+</menu>

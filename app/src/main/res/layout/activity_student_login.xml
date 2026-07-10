@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FCF7FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="@string/app_title"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <!-- Student Login -->
+
+        <TextView
+            android:id="@+id/tvStudentLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="56dp"
+            android:text="@string/login"
+            android:textColor="#5A2D8A"
+            android:textSize="34sp"
+            android:textStyle="bold"/>
+
+        <!-- Roll Number -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/roll_number"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etRollNumber"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableStart="@drawable/baseline_badge_24"
+            android:drawablePadding="12dp"
+            android:hint="@string/enter_roll_number"
+            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:paddingHorizontal="18dp"
+            android:textColor="#000000"
+            android:textColorHint="#ADADAD"
+            android:textSize="17sp"
+            app:drawableTint="#E850A8"/>
+
+        <!-- Password -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/password"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawablePadding="12dp"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="18dp"
+            android:textColor="#000000"
+            android:textColorHint="#ADADAD"
+            android:textSize="17sp"
+            app:drawableTint="#FF5E87"/>
+
+        <!-- Show Password -->
+
+        <CheckBox
+            android:id="@+id/cbShowPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="20dp"
+            android:buttonTint="#5A2D8A"
+            android:text="@string/show_password"
+            android:textColor="#222222"
+            android:textSize="16sp"/>
+
+        <!-- Login Button -->
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/gradient_button"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+        <!-- Divider -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:background="#E8E8E8"/>
+
+        <!-- Don't have account -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/dont_have_account"
+            android:textColor="#8C8C8C"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="@string/sign_up"
+            android:textAllCaps="true"
+            android:textColor="#006C9D"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="85dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="#006C9D"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF8FB">
+
+    <!-- ================= TOP BAR ================= -->
+
+    <FrameLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:background="@drawable/gradient_primary">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="42dp"
+            android:padding="6dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="@string/my_registrations"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </FrameLayout>
+
+    <!-- ================= RECYCLER VIEW ================= -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRegistrations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:clipToPadding="false"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="24dp"/>
+
+    <!-- ================= EMPTY VIEW ================= -->
+
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingTop="32dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/baseline_confirmation_number_24"
+            app:tint="#C8B5E5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/no_registrations"
+            android:textColor="#5A3E85"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/register_events_message"
+            android:textColor="#9A8FB5"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

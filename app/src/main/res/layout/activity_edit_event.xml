@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF8FB">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Bar -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="42dp"
+                android:padding="6dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="@string/edit_event"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="26dp"
+            android:paddingBottom="20dp">
+
+            <!-- Event Name -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_name"
+                android:textColor="#5A3E85"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEventName"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_bg"
+                android:hint=""
+                android:drawableStart="@drawable/baseline_event_24"
+                android:drawableTint="#7A3FD4"
+                android:drawablePadding="8dp"
+                android:paddingHorizontal="16dp"
+                android:textColor="#2F2346"
+                android:textColorHint="#ADADAD"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:imeOptions="actionNext"/>
+
+            <!-- Description -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/description"
+                android:textColor="#5A3E85"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etEventDescription"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/baseline_description_24"
+                android:drawableTint="#7A3FD4"
+                android:drawablePadding="8dp"
+                android:gravity="top|start"
+                android:hint="@string/enter_description"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:padding="16dp"
+                android:textColor="#2F2346"
+                android:textColorHint="#ADADAD"
+                android:imeOptions="actionNext"/>
+
+            <!-- Poster -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/event_poster_optional"
+                android:textColor="#5A3E85"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnChooseBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_card"
+                android:gravity="center"
+                android:paddingHorizontal="22dp"
+                android:text="@string/update_poster"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@null"/>
+
+            <!-- Preview (Hidden until selected) -->
+
+            <ImageView
+                android:id="@+id/imgEventBanner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_card"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:visibility="gone"/>
+
+            <!-- Date + Time -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etEventDate"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableStart="@drawable/baseline_calendar_month_24"
+                    android:drawableTint="#7A3FD4"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:singleLine="true"
+                    android:ellipsize="none"
+                    android:scrollHorizontally="true"
+                    android:textColor="#2F2346"
+                    android:textColorHint="#ADADAD"
+                    android:inputType="none"/>
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etEventTime"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableTint="#7A3FD4"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableStart="@drawable/baseline_schedule_24"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:singleLine="true"
+                    android:textColor="#2F2346"
+                    android:textColorHint="#ADADAD"
+                    android:inputType="none"/>
+
+            </LinearLayout>
+
+            <!-- Venue -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/venue"
+                android:textColor="#5A3E85"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etVenue"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/baseline_location_on_24"
+                android:drawableTint="#7A3FD4"
+                android:drawablePadding="8dp"
+                android:hint=""
+                android:paddingHorizontal="16dp"
+                android:textColor="#2F2346"
+                android:textColorHint="#ADADAD"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:imeOptions="actionNext"/>
+
+            <!-- Limit -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/participant_limit"
+                android:textColor="#5A3E85"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etParticipationLimit"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/baseline_groups_24"
+                android:drawableTint="#7A3FD4"
+                android:drawablePadding="8dp"
+                android:hint="@string/maximum_participants"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="#2F2346"
+                android:textColorHint="#ADADAD"
+                android:singleLine="true"
+                android:imeOptions="actionDone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/registrations"
+                    android:textColor="#5A3E85"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/baseline_groups_24"
+                    app:tint="#7A3FD4"/>
+
+                <TextView
+                    android:id="@+id/tvRegistrationCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <!-- Create Button -->
+
+            <Button
+                android:id="@+id/btnSaveChanges"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/gradient_button"
+                android:text="@string/save_changes"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+            <!-- Deactivate Button -->
+
+            <Button
+                android:id="@+id/btnDeactivate"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/blue_button"
+                android:text="@string/deactivate_event"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"/>
+
+            <!-- Delete Button -->
+
+            <Button
+                android:id="@+id/btnDeleteEvent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/red_button"
+                android:drawableTint="#7A3FD4"
+                android:text="@string/delete_event"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

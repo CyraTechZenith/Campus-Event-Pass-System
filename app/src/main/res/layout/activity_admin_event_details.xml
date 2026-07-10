@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF8FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ================= TOP BAR ================= -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="42dp"
+                android:padding="6dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="50dp"
+                android:text="@string/event_details"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <!-- Event Name -->
+
+        <TextView
+            android:id="@+id/tvEventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/event_name"
+            android:textColor="#2F2346"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <!-- ================= INFO CARD ================= -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                tools:ignore="MissingClass">
+
+                <!-- Date -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_calendar_month_24"
+                        app:tint="#7A3FD4"/>
+
+                    <TextView
+                        android:id="@+id/tvEventDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/date_and_time"
+                        android:textColor="#343434"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="16dp"
+                    android:background="#EEEEEE"/>
+
+                <!-- Venue -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_location_on_24"
+                        app:tint="#7A3FD4"/>
+
+                    <TextView
+                        android:id="@+id/tvEventVenue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/venue"
+                        android:textColor="#343434"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="16dp"
+                    android:background="#EEEEEE"/>
+
+                <!-- Registered -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_groups_24"
+                        app:tint="#4CAF50"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/registered"
+                        android:textColor="#343434"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/tvRegistered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_registration_count"
+                        android:textColor="#2F2346"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- View Participants -->
+
+        <Button
+            android:id="@+id/btnViewParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/gradient_button"
+            android:text="@string/view_participants"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+        <!-- Start Scanning -->
+
+        <Button
+            android:id="@+id/btnStartScanning"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/gradient_button"
+            android:text="@string/start_scanning"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+        <!-- Edit Event -->
+
+        <Button
+            android:id="@+id/btnEditEvent"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/gradient_button"
+            android:text="@string/edit_event"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</ScrollView>

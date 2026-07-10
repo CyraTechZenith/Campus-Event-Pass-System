@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuNewest"
+        android:title="@string/newest_first"/>
+
+    <item
+        android:id="@+id/menuOldest"
+        android:title="@string/oldest_first"/>
+
+    <item
+        android:id="@+id/menuVerified"
+        android:title="@string/verified_first"/>
+
+    <item
+        android:id="@+id/menuFailed"
+        android:title="@string/failed_first"/>
+
+</menu>

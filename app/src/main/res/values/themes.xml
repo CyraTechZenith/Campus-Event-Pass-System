@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style
+        name="Base.Theme.CampusEventPassSystem"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:statusBarColor">@color/primary_purple</item>
+
+        <item name="android:navigationBarColor">@color/primary_purple</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="popupMenuStyle">@style/PopupMenuStyle</item>
+
+    </style>
+
+    <style
+        name="Theme.CampusEventPassSystem"
+        parent="Base.Theme.CampusEventPassSystem"/>
+
+    <style name="ToolbarTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="PopupMenuStyle"
+        parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@drawable/popup_bg</item>
+    </style>
+
+    <style name="DrawerText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

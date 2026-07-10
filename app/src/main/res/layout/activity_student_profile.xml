@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FCF7FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/gradient_primary">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="42dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="48dp"
+                android:text="@string/my_profile"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+        </FrameLayout>
+
+        <!-- Profile Image -->
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@drawable/circle_avatar"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_account_circle_24"/>
+
+            <TextView
+                android:id="@+id/tvInitials"
+                android:visibility="gone"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:background="@drawable/circle_avatar"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="38sp"/>
+
+            <ImageButton
+                android:id="@+id/btnEditImage"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="-2dp"
+                android:layout_marginBottom="-2dp"
+                android:src="@drawable/baseline_edit_24"
+                android:background="@android:color/transparent"
+                app:tint="#7A3FD4"/>
+        </FrameLayout>
+
+        <!-- Student Name -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/student_name"
+                android:textColor="#2F2346"
+                android:textSize="26sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- Roll Number -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/roll_number"
+            android:textColor="#2F2346"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvRollNumber"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/baseline_badge_24"
+            android:drawablePadding="12dp"
+            app:drawableTint="#F65AA5"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            android:hint="@string/roll_number_placeholder"
+            android:textColorHint="#ADADAD"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <!-- Password -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/password"
+            android:textColor="#2F2346"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/baseline_lock_24"
+            android:drawablePadding="12dp"
+            app:drawableTint="#F65AA5"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            android:text="@string/hidden_password"
+            android:textColorHint="#ADADAD"
+            android:textColor="#000000"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/gradient_button"
+            android:text="@string/change_password"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

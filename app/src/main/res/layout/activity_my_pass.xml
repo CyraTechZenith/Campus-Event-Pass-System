@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#201A35">
+
+    <FrameLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:background="@drawable/gradient_primary">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="42dp"
+            android:padding="6dp"
+            android:contentDescription="@string/back"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="@string/my_pass"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/btnDownload"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="16dp"
+            android:padding="6dp"
+            android:contentDescription="@string/download"
+            android:src="@drawable/baseline_download_24"
+            app:tint="@android:color/white"/>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:fillViewport="true">
+
+        <include
+            android:id="@+id/passLayout"
+            layout="@layout/layout_pass"/>
+
+    </ScrollView>
+
+</RelativeLayout>
