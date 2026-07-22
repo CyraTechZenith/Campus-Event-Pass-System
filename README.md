@@ -1,6 +1,6 @@
-# UniPass
+# UniPass - Campus Event Pass System
 
-UniPass is an Android application developed to simplify campus event management through digital event passes and QR code verification. This project was developed as part of my BCA coursework with the goal of building a practical event management application that reflects real-world workflows rather than a basic academic demonstration.
+UniPass is an Android application developed to simplify campus event management through digital event passes and QR code verification. This project was developed as part of my BCA coursework with the goal of building a practical event management application inspired by real-world campus event workflows rather than a simple academic demonstration.
 
 The application provides separate modules for administrators and students. Administrators can create and manage events, monitor registrations, view participants, and verify entries using QR codes. Students can browse events, register for them, receive a digital event pass, and download it for future use.
 
@@ -87,7 +87,7 @@ app
 ## Future Improvements
 
 - Push notifications for upcoming events
-- Online database integration using Firebase
+- Cloud database integration using Firebase
 - Attendance analytics
 - Multi-language support
 - Event search and filtering
