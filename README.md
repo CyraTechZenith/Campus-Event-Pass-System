@@ -70,7 +70,17 @@ app
 
 ## Screenshots
 
-Screenshots will be added after the final UI polish.
+| Student Login | Student Dashboard |
+|---------------|-------------------|
+| ![](screenshots/student_login.jpeg) | ![](screenshots/student_dashboard.jpg) |
+
+| Event List | Digital Pass |
+|------------|--------------|
+| ![](screenshots/event_list.jpg) | ![](screenshots/digital_pass.png) |
+
+| Admin Dashboard | QR Verification |
+|-----------------|-----------------|
+| ![](screenshots/admin_dashboard.jpg) | ![](screenshots/qr_verification.jpg) |
 
 ---
 
