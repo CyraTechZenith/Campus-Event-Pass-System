@@ -1,6 +1,6 @@
 # UniPass
 
-UniPass is an Android application developed to simplify campus event management through digital event passes and QR code verification. The project was built as part of my BCA coursework while focusing on creating something that resembles a real-world event management system rather than just a basic academic project.
+UniPass is an Android application developed to simplify campus event management through digital event passes and QR code verification. This project was developed as part of my BCA coursework with the goal of building a practical event management application that reflects real-world workflows rather than a basic academic demonstration.
 
 The application provides separate modules for administrators and students. Administrators can create and manage events, monitor registrations, view participants, and verify entries using QR codes. Students can browse events, register for them, receive a digital event pass, and download it for future use.
 
@@ -35,7 +35,16 @@ The application provides separate modules for administrators and students. Admin
 - Room Database
 - RecyclerView
 - Material Components
-- ZXing QR Code Library
+- ZXing QR Code Library (QR Code Generation & Scanning)
+
+---
+
+## Architecture
+
+- Android (Java)
+- Room Database
+- DAO Pattern
+- XML-based UI
 
 ---
 
