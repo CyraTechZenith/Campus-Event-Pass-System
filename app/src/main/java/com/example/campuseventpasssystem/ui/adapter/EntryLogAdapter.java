@@ -21,21 +21,15 @@ public class EntryLogAdapter extends RecyclerView.Adapter<EntryLogAdapter.LogVie
     private final List<EntryLog> logList;
 
     public EntryLogAdapter(Context context, List<EntryLog> logList) {
-
         this.context = context;
-
         this.logList = logList;
-
     }
 
     @NonNull
     @Override
     public LogViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(context).inflate(R.layout.item_entry_log, parent, false);
-
         return new LogViewHolder(view);
-
     }
 
     @Override
@@ -57,11 +51,7 @@ public class EntryLogAdapter extends RecyclerView.Adapter<EntryLogAdapter.LogVie
 
         holder.tvRoll.setText(context.getString(R.string.roll_number_format, log.getStudentRollNumber()));
 
-        holder.tvEvent.setText(R.string.event_name);
-
         holder.tvTime.setText(log.getScanTime());
-
-        // Avatar (First 2 letters)
 
         String avatar = log.getStudentRollNumber().length() >= 2 ? log.getStudentRollNumber().substring(0, 2).toUpperCase() : log.getStudentRollNumber().toUpperCase();
 
@@ -145,8 +135,6 @@ public class EntryLogAdapter extends RecyclerView.Adapter<EntryLogAdapter.LogVie
             tvStudentName = itemView.findViewById(R.id.tvStudentName);
 
             tvRoll = itemView.findViewById(R.id.tvRoll);
-
-            tvEvent = itemView.findViewById(R.id.tvEvent);
 
             tvTime = itemView.findViewById(R.id.tvTime);
 

@@ -16,7 +16,6 @@ public class QrCodeUtils {
     public static Bitmap generateQr(String qrData) {
 
         try {
-
             QRCodeWriter writer = new QRCodeWriter();
 
             BitMatrix matrix = writer.encode(qrData, BarcodeFormat.QR_CODE, 700, 700);

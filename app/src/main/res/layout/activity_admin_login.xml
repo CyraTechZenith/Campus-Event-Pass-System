@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="#FEF8FB">
 
-    <!-- Top Gradient Bar -->
+    <!-- Top Bar -->
 
     <View
         android:id="@+id/topGradient"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- App Name -->
+    <!-- App Title -->
 
     <TextView
         android:id="@+id/tvAppTitle"

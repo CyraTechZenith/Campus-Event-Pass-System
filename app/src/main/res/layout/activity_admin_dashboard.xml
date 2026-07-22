@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="#FEF8FB">
 
-    <!-- Top Gradient -->
+    <!-- Top Bar -->
 
     <View
         android:id="@+id/topGradient"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Title -->
+    <!-- Page Title -->
 
     <TextView
         android:id="@+id/tvTitle"
@@ -37,8 +37,6 @@
 
     <!-- Settings -->
 
-    <!-- Logo -->
-
     <ImageButton
         android:id="@+id/btnSettings"
         android:layout_width="42dp"
@@ -51,6 +49,8 @@
         app:layout_constraintTop_toTopOf="@id/topGradient"
         app:tint="@android:color/white" />
 
+    <!-- Logo -->
+
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="150dp"
@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Create Event -->
+    <!-- Create Event Button -->
 
     <Button
         android:id="@+id/btnCreateEvent"
@@ -82,7 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Scan QR -->
+    <!-- Scan QR Button -->
 
     <Button
         android:id="@+id/btnScanQr"
@@ -103,7 +103,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- ================= ACTIVE EVENTS ================= -->
+    <!-- Active Events -->
 
     <TextView
         android:id="@+id/tvActiveEventsTitle"
@@ -133,7 +133,7 @@
         app:layout_constraintBottom_toBottomOf="@id/tvActiveEventsTitle"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- RecyclerView -->
+    <!-- Active Events List -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvActiveEvents"
@@ -163,11 +163,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Empty State Icon -->
+
         <ImageView
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:src="@drawable/baseline_event_note_24"
             app:tint="#C8B5E5"/>
+
+        <!-- Empty State Message -->
 
         <TextView
             android:id="@+id/tvNoEvents"

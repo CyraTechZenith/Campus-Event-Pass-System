@@ -5,11 +5,7 @@ import android.content.Intent;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 
 import com.example.campuseventpasssystem.R;
@@ -26,11 +22,19 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btnAdmin = findViewById(R.id.btnAdmin);
 
+        // ==========================
+        // Student Login
+        // ==========================
+
         btnStudent.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, StudentLoginActivity.class);
 
             startActivity(intent);
         });
+
+        // ==========================
+        // Admin Login
+        // ==========================
 
         btnAdmin.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);

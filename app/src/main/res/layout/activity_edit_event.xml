@@ -29,6 +29,8 @@
                 android:src="@drawable/baseline_arrow_back_24"
                 app:tint="@android:color/white"/>
 
+            <!-- Page Title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,6 +152,8 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
+                <!-- Date -->
+
                 <EditText
                     android:id="@+id/etEventDate"
                     android:layout_width="0dp"
@@ -175,6 +179,8 @@
                 <Space
                     android:layout_width="12dp"
                     android:layout_height="wrap_content" />
+
+                <!-- Time -->
 
                 <EditText
                     android:id="@+id/etEventTime"
@@ -225,7 +231,7 @@
                 android:ellipsize="end"
                 android:imeOptions="actionNext"/>
 
-            <!-- Limit -->
+            <!-- Participant Limit -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -251,6 +257,8 @@
                 android:textColorHint="#ADADAD"
                 android:singleLine="true"
                 android:imeOptions="actionDone"/>
+
+            <!-- Registration Count -->
 
             <LinearLayout
                 android:layout_width="match_parent"

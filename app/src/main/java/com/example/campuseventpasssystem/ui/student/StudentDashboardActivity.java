@@ -11,10 +11,7 @@ import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,8 +24,6 @@ import com.example.campuseventpasssystem.ui.adapter.EventCardAdapter;
 import com.example.campuseventpasssystem.ui.auth.LoginActivity;
 import com.example.campuseventpasssystem.utils.SessionManager;
 import com.google.android.material.navigation.NavigationView;
-import com.example.campuseventpasssystem.ui.student.StudentProfileActivity;
-import com.example.campuseventpasssystem.ui.student.MyRegistrationsActivity;
 
 import java.util.List;
 

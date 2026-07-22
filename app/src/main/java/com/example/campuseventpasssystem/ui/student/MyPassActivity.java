@@ -81,6 +81,10 @@ public class MyPassActivity extends AppCompatActivity {
 
         }
 
+        // ==========================
+        // Load Pass
+        // ==========================
+
         loadPass();
 
         btnBack.setOnClickListener(v -> finish());
@@ -147,7 +151,6 @@ public class MyPassActivity extends AppCompatActivity {
     private boolean isEventOver() {
 
         try {
-
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
             Calendar today = Calendar.getInstance();

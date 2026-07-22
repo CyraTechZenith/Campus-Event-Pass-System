@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ================= TOP BAR ================= -->
+        <!-- Top Bar -->
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -30,6 +30,8 @@
                 android:src="@drawable/baseline_arrow_back_24"
                 app:tint="@android:color/white"/>
 
+            <!-- Page Title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,7 +44,7 @@
 
         </FrameLayout>
 
-        <!-- ================= LOGO ================= -->
+        <!-- Logo -->
 
         <ImageView
             android:id="@+id/imgUniversity"
@@ -52,7 +54,7 @@
             android:layout_gravity="center"
             android:src="@drawable/uni_logo" />
 
-        <!-- ================= EVENT NAME ================= -->
+        <!-- Event Name -->
 
         <TextView
             android:id="@+id/tvEventName"
@@ -65,7 +67,7 @@
             android:textSize="28sp"
             android:textStyle="bold"/>
 
-        <!-- ================= DATE ================= -->
+        <!-- Date -->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -91,7 +93,7 @@
 
         </LinearLayout>
 
-        <!-- ================= VENUE ================= -->
+        <!-- Venue -->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,7 +119,7 @@
 
         </LinearLayout>
 
-        <!-- ================= EVENT DETAILS BUTTON ================= -->
+        <!-- Event Details Button -->
 
         <Button
             android:id="@+id/btnEventDetails"
@@ -133,7 +135,7 @@
             android:textStyle="bold"
             app:backgroundTint="@null"/>
 
-        <!-- ================= ENTRY LOGS BUTTON ================= -->
+        <!-- Entry Logs Button -->
 
         <Button
             android:id="@+id/btnEntryLogs"

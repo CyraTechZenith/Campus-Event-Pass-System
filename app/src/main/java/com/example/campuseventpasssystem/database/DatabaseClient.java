@@ -13,7 +13,6 @@ public class DatabaseClient {
     public static AppDatabase getInstance(Context context) {
 
         if (database == null) {
-
             database = Room.databaseBuilder(context, AppDatabase.class, "CampusEventDatabase").allowMainThreadQueries().fallbackToDestructiveMigration().build();
         }
 

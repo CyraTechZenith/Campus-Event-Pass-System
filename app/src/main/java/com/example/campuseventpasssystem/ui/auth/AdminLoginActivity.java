@@ -34,6 +34,10 @@ public class AdminLoginActivity extends AppCompatActivity {
 
         Button btnLogin = findViewById(R.id.btnLogin);
 
+        // ==========================
+        // Show Password
+        // ==========================
+
         cbShowPassword.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
 
@@ -50,6 +54,10 @@ public class AdminLoginActivity extends AppCompatActivity {
                     etPassword.setSelection(etPassword.getText().length());
 
                 });
+
+        // ==========================
+        // Login
+        // ==========================
 
         btnLogin.setOnClickListener(v -> {
 

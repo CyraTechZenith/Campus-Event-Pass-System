@@ -17,16 +17,16 @@ import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
 import com.example.campuseventpasssystem.database.entities.Event;
+import com.example.campuseventpasssystem.ui.admin.AdminDashboardActivity;
 
 import java.util.Calendar;
 import java.util.Locale;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class EditEventActivity extends AppCompatActivity {
     private ImageView imgEventBanner;
@@ -52,9 +52,8 @@ public class EditEventActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_edit_event);
 
-
         //=============================
-        // Views
+        // Initialise Views
         //=============================
 
         ImageView btnBack = findViewById(R.id.btnBack);
@@ -87,6 +86,35 @@ public class EditEventActivity extends AppCompatActivity {
 
         event = DatabaseClient.getInstance(this).eventDao().getEventById(eventId);
 
+        try {
+            String dateTime = event.getEventDate() + " " + event.getEventTime();
+
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+
+            Date eventDateTime = format.parse(dateTime);
+
+            boolean eventEnded = eventDateTime != null && eventDateTime.before(new Date());
+
+            if (eventEnded) {
+
+                btnDeactivate.setVisibility(View.GONE);
+
+            } else if (Event.CANCELLED.equals(event.getEventStatus())) {
+
+                btnDeactivate.setText(R.string.reactivate);
+
+            } else {
+
+                btnDeactivate.setText(R.string.deactivate);
+
+            }
+
+        } catch (Exception e) {
+
+            btnDeactivate.setVisibility(View.GONE);
+
+        }
+
         if (event != null) {
 
             etEventName.setText(event.getEventName());
@@ -110,22 +138,14 @@ public class EditEventActivity extends AppCompatActivity {
             if (bannerUri != null && !bannerUri.isEmpty()) {
 
                 try {
-
                     imgEventBanner.setImageURI(Uri.parse(bannerUri));
-
                     imgEventBanner.setVisibility(View.VISIBLE);
-
                 }
                 catch (Exception e) {
-
                     e.printStackTrace();
-
                     imgEventBanner.setImageResource(R.drawable.default_event_banner);
-
                     imgEventBanner.setVisibility(View.VISIBLE);
-
                     bannerUri = "";
-
                 }
 
             } else {
@@ -317,17 +337,10 @@ public class EditEventActivity extends AppCompatActivity {
             if (!limitText.isEmpty()) {
 
                 try {
-
                     limit = Integer.parseInt(limitText);
-
-                }
-
-                catch (NumberFormatException e) {
-
+                } catch (NumberFormatException e) {
                     Toast.makeText(this, R.string.invalid_participant_limit, Toast.LENGTH_SHORT).show();
-
                     return;
-
                 }
 
                 if (limit <= 0) {
@@ -370,32 +383,85 @@ public class EditEventActivity extends AppCompatActivity {
         // Deactivate Event
         //=============================
 
-        btnDeactivate.setOnClickListener(v ->
+        btnDeactivate.setOnClickListener(v -> {
+
+            if (Event.CANCELLED.equals(event.getEventStatus())) {
+
+                new AlertDialog.Builder(this)
+
+                        .setTitle(R.string.reactivate)
+
+                        .setMessage("Students will be able to register for this event again.\nContinue?")
+
+                        .setNegativeButton(R.string.cancel, null)
+
+                        .setPositiveButton(R.string.reactivate, (dialog, which) -> {
+
+                            event.setEventStatus(Event.ACTIVE);
+
+                            DatabaseClient.getInstance(this)
+                                    .eventDao()
+                                    .updateEvent(event);
+
+                            Toast.makeText(this,
+                                    R.string.event_reactivated_confirmation,
+                                    Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(
+                                    EditEventActivity.this,
+                                    AdminDashboardActivity.class);
+
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                            startActivity(intent);
+
+                            finish();
+
+                        })
+
+                        .show();
+
+            } else {
 
                 new AlertDialog.Builder(this)
 
                         .setTitle(R.string.deactivate_event)
 
-                        .setMessage("Students will no longer be able to register for this event.\\n\\nContinue?")
+                        .setMessage("Students will no longer be able to register for this event.\nContinue?")
 
                         .setNegativeButton(R.string.cancel, null)
 
                         .setPositiveButton(
-                                R.string.deactivate, (dialog, which) -> {
+                                R.string.deactivate,
+                                (dialog, which) -> {
 
                                     event.setEventStatus(Event.CANCELLED);
 
-                                    DatabaseClient.getInstance(this).eventDao().updateEvent(event);
+                                    DatabaseClient.getInstance(this)
+                                            .eventDao()
+                                            .updateEvent(event);
 
-                                    Toast.makeText(this, R.string.event_deactivated, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this,
+                                            R.string.event_deactivated,
+                                            Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(
+                                            EditEventActivity.this,
+                                            AdminDashboardActivity.class);
+
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                                    startActivity(intent);
 
                                     finish();
 
                                 })
 
-                        .show()
+                        .show();
 
-        );
+            }
+
+        });
 
 
         //=============================
@@ -412,7 +478,7 @@ public class EditEventActivity extends AppCompatActivity {
 
                         .setTitle(R.string.cannot_delete)
 
-                        .setMessage("Students are already registered for this event.\\n\\nDeactivate it instead.")
+                        .setMessage("Students are already registered for this event.\n\nDeactivate it instead.")
 
                         .setPositiveButton(R.string.ok, null).show();
 
@@ -426,7 +492,7 @@ public class EditEventActivity extends AppCompatActivity {
 
                     .setTitle(R.string.delete_event)
 
-                    .setMessage("This event has no registrations.\\n\\nDelete permanently?")
+                    .setMessage("This event has no registrations.\n\nDelete permanently?")
 
                     .setNegativeButton(R.string.cancel, null)
 
@@ -436,6 +502,12 @@ public class EditEventActivity extends AppCompatActivity {
                                 DatabaseClient.getInstance(this).eventDao().deleteEvent(eventId);
 
                                 Toast.makeText(this, R.string.event_deleted, Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(EditEventActivity.this, AdminDashboardActivity.class);
+
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                                startActivity(intent);
 
                                 finish();
 

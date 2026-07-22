@@ -9,9 +9,6 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
@@ -53,7 +50,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         int eventId = getIntent().getIntExtra("EVENT_ID", 1);
 
         // ==========================
-        // Back Button
+        // Back
         // ==========================
 
         btnBack.setOnClickListener(v -> finish());
@@ -76,16 +73,15 @@ public class EventDetailsActivity extends AppCompatActivity {
 
             tvEventDescription.setText(event.getEventDescription());
 
-            if (event.getEventBannerUri() != null && !event.getEventBannerUri().isEmpty()) {
+            String bannerUri = event.getEventBannerUri();
+
+            if (bannerUri != null && !bannerUri.trim().isEmpty()) {
 
                 try {
-
-                    imgBanner.setImageURI(Uri.parse(event.getEventBannerUri()));
-
+                    imgBanner.setImageURI(Uri.parse(bannerUri));
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                     imgBanner.setImageResource(R.drawable.default_event_banner);
-
                 }
 
             } else {

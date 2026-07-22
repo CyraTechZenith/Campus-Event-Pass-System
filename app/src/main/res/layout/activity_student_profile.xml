@@ -9,13 +9,12 @@
     android:fillViewport="true"
     android:background="#FCF7FF">
 
+    <!-- Top Bar -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <!-- Header -->
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="104dp"
@@ -30,6 +29,8 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/baseline_arrow_back_24"
                 app:tint="@android:color/white"/>
+
+            <!-- Page Title -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -161,6 +162,8 @@
             android:textColorHint="#ADADAD"
             android:textColor="#000000"
             android:textSize="17sp"/>
+
+        <!-- Change Password Button -->
 
         <Button
             android:id="@+id/btnChangePassword"

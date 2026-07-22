@@ -2,13 +2,11 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="6dp"
     android:layout_marginVertical="8dp"
-
     app:cardCornerRadius="18dp"
     app:cardElevation="4dp"
     app:cardBackgroundColor="@android:color/white">
@@ -16,8 +14,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="110dp"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <!-- Avatar -->
 
@@ -27,55 +26,43 @@
             android:layout_height="52dp"
             android:background="@drawable/circle_avatar"
             android:gravity="center"
-            tools:text="@string/sample_initials"
             android:textColor="#1B5E20"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            tools:text="@string/sample_initials" />
 
-        <!-- Middle -->
+        <!-- Student Details -->
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginStart="14dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvStudentName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="@string/student_name"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:textColor="#2F2346"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:text="@string/student_name" />
 
             <TextView
                 android:id="@+id/tvRoll"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                tools:text="@string/roll_number_format"
                 android:textColor="#666666"
-                android:textSize="15sp"/>
-
-            <TextView
-                android:id="@+id/tvEvent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/rounded_card"
-                android:minWidth="110dp"
-                android:gravity="center"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"
-                tools:text="@string/event_name"
-                android:textColor="#6A3FBF"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
+                tools:text="@string/roll_number_format" />
 
         </LinearLayout>
 
-        <!-- Right -->
+        <!-- Status Section -->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -87,9 +74,9 @@
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="@string/time"
                 android:textColor="#555555"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                tools:text="@string/time" />
 
             <!-- Status Badge -->
 
@@ -101,10 +88,10 @@
                 android:background="@drawable/status_verified_bg"
                 android:paddingHorizontal="14dp"
                 android:paddingVertical="6dp"
-                tools:text="@string/verified"
                 android:textColor="@android:color/white"
                 android:textSize="13sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:text="@string/verified" />
 
         </LinearLayout>
 

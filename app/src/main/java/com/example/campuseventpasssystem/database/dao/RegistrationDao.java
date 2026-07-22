@@ -40,6 +40,7 @@ public interface RegistrationDao {
 
     @Query("SELECT * FROM registrations ORDER BY registrationId DESC LIMIT 1")
     Registration getLatestRegistration();
+
     @Query("SELECT * FROM registrations WHERE studentRollNumber = :rollNumber AND eventId = :eventId LIMIT 1")
     Registration getRegistration(String rollNumber, int eventId);
 }

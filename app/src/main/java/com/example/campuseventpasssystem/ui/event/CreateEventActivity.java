@@ -15,9 +15,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
@@ -57,7 +54,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
         imgEventBanner = findViewById(R.id.imgEventBanner);
 
-        // ================= DATE PICKER =================
+        // ================= Date Picker =================
 
         etEventDate.setOnClickListener(v -> {
 
@@ -86,7 +83,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
 
 
-        // ================= TIME PICKER =================
+        // ================= Time Picker =================
 
         etEventTime.setOnClickListener(v -> {
 
@@ -115,7 +112,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
 
 
-        // ================= IMAGE PICKER =================
+        // ================= Banner Picker =================
 
         bannerPickerLauncher =
                 registerForActivityResult(
@@ -129,12 +126,20 @@ public class CreateEventActivity extends AppCompatActivity {
                                 if (uri != null) {
 
                                     try {
-
                                         getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-
+                                        Toast.makeText(
+                                                this,
+                                                "Permission saved",
+                                                Toast.LENGTH_SHORT
+                                        ).show();
                                     } catch (SecurityException e) {
 
                                         e.printStackTrace();
+                                        Toast.makeText(
+                                                this,
+                                                e.toString(),
+                                                Toast.LENGTH_LONG
+                                        ).show();
 
                                     }
 
@@ -164,7 +169,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
 
 
-        // ================= CREATE EVENT =================
+        // ================= Create Event =================
 
         btnCreateEvent.setOnClickListener(v -> {
 
@@ -220,15 +225,10 @@ public class CreateEventActivity extends AppCompatActivity {
             if (!limitText.isEmpty()) {
 
                 try {
-
                     limit = Integer.parseInt(limitText);
-
                 } catch (NumberFormatException e) {
-
                     Toast.makeText(this, R.string.invalid_participant_limit, Toast.LENGTH_SHORT).show();
-
                     return;
-
                 }
 
                 if (limit <= 0) {

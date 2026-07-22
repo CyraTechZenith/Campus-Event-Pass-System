@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#FEF8FB">
 
-    <!-- ================= TOP BAR ================= -->
+    <!-- Top Bar -->
 
     <FrameLayout
         android:id="@+id/topBar"
@@ -26,6 +26,8 @@
             android:src="@drawable/baseline_arrow_back_24"
             app:tint="@android:color/white"/>
 
+        <!-- Page Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +40,7 @@
 
     </FrameLayout>
 
-    <!-- ================= RECYCLER VIEW ================= -->
+    <!-- Recycler View -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRegistrations"
@@ -50,7 +52,7 @@
         android:paddingTop="18dp"
         android:paddingBottom="24dp"/>
 
-    <!-- ================= EMPTY VIEW ================= -->
+    <!-- Empty View -->
 
     <LinearLayout
         android:id="@+id/layoutEmpty"

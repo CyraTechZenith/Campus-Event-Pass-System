@@ -20,9 +20,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
@@ -48,11 +45,8 @@ public class StudentSignUpActivity extends AppCompatActivity {
                         tvInitials.setVisibility(View.GONE);
 
                         try {
-
                             getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
                         } catch (Exception ignored) {
-
                         }
 
 
@@ -86,6 +80,10 @@ public class StudentSignUpActivity extends AppCompatActivity {
         ivProfilePhoto = findViewById(R.id.ivProfilePhoto);
 
         tvInitials = findViewById(R.id.tvInitials);
+
+        // ==========================
+        // Update Initials
+        // ==========================
 
         etName.addTextChangedListener(new TextWatcher() {
 
@@ -123,6 +121,10 @@ public class StudentSignUpActivity extends AppCompatActivity {
         // ==========================
 
         btnLogin.setOnClickListener(v -> finish());
+
+        // ==========================
+        // Add Profile Photo
+        // ==========================
 
         btnAddPhoto.setOnClickListener(v -> pickImageLauncher.launch("image/*"));
 

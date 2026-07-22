@@ -1,1 +1,8 @@
+# Android Studio
+.idea/
+.kotlin/
+*.iml
+
+# Build folders
 /build
+/app/build

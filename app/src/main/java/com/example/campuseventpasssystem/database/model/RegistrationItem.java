@@ -10,21 +10,16 @@ public class RegistrationItem {
     public RegistrationItem(Registration registration, Event event) {
 
         this.registration = registration;
-
         this.event = event;
 
     }
 
     public Registration getRegistration() {
-
         return registration;
-
     }
 
     public Event getEvent() {
-
         return event;
-
     }
 
 }

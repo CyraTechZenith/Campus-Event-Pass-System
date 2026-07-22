@@ -9,17 +9,13 @@
     android:layout_height="match_parent"
     android:background="#FCF7FF">
 
-    <!-- ========================= -->
-    <!-- Main Content -->
-    <!-- ========================= -->
+    <!-- Top Bar -->
 
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <!-- Toolbar -->
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -35,6 +31,8 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/baseline_menu_24"
                 app:tint="@android:color/white" />
+
+            <!-- App Title -->
 
             <TextView
                 android:id="@+id/tvHeaderTitle"
@@ -107,7 +105,6 @@
 
         </LinearLayout>
 
-
         <!-- Events List -->
 
         <androidx.recyclerview.widget.RecyclerView
@@ -161,9 +158,7 @@
 
     </LinearLayout>
 
-    <!-- ========================= -->
     <!-- Navigation Drawer -->
-    <!-- ========================= -->
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"

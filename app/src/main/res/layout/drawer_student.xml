@@ -12,10 +12,11 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp">
 
+    <!-- Top Bar -->
+
     <FrameLayout
         android:layout_width="52dp"
         android:layout_height="52dp">
-
 
         <!-- Profile Photo -->
 
@@ -40,6 +41,8 @@
             android:textStyle="bold"/>
 
     </FrameLayout>
+
+    <!-- Student Name -->
 
     <TextView
         android:id="@+id/tvDrawerName"

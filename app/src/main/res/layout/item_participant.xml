@@ -21,8 +21,12 @@
 
         <TextView
             android:id="@+id/tvParticipantName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/tvParticipantStatus"
+            android:layout_marginEnd="12dp"
+            android:maxLines="2"
+            android:ellipsize="end"
             tools:text="@string/student_name"
             android:textColor="#2E2345"
             android:textSize="22sp"
@@ -32,7 +36,9 @@
 
         <TextView
             android:id="@+id/tvParticipantRoll"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_toStartOf="@id/tvParticipantStatus"
+            android:layout_marginEnd="12dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvParticipantName"
             android:layout_marginTop="6dp"

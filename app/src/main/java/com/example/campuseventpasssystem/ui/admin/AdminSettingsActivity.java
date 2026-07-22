@@ -13,9 +13,6 @@ import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
@@ -41,6 +38,10 @@ public class AdminSettingsActivity extends AppCompatActivity {
 
         String email = SessionManager.getCurrentAdminEmail(this);
 
+        // ==========================
+        // Load Admin
+        // ==========================
+
         Admin admin = DatabaseClient.getInstance(getApplicationContext()).adminDao().getAdminByEmail(email);
 
         if (admin != null) {
@@ -56,6 +57,10 @@ public class AdminSettingsActivity extends AppCompatActivity {
             tvInitials.setText(initials);
 
         }
+
+        // ==========================
+        // Change Password
+        // ==========================
 
         btnChangePassword.setOnClickListener(v -> {
 
@@ -114,6 +119,10 @@ public class AdminSettingsActivity extends AppCompatActivity {
                     .show();
 
         });
+
+        // ==========================
+        // Logout
+        // ==========================
 
         btnLogout.setOnClickListener(v -> {
 

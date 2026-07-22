@@ -19,6 +19,8 @@
             android:layout_height="104dp"
             android:background="@drawable/gradient_primary">
 
+            <!-- Page Title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,6 +144,8 @@
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal">
 
+                <!-- Date -->
+
                 <EditText
                     android:id="@+id/etEventDate"
                     android:layout_width="0dp"
@@ -165,6 +169,8 @@
                 <Space
                     android:layout_width="16dp"
                     android:layout_height="wrap_content" />
+
+                <!-- Time -->
 
                 <EditText
                     android:id="@+id/etEventTime"
@@ -216,7 +222,7 @@
                 android:ellipsize="end"
                 android:imeOptions="actionNext"/>
 
-            <!-- Limit -->
+            <!-- Participant Limit -->
 
             <TextView
                 android:layout_width="wrap_content"

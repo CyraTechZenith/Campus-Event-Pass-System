@@ -27,7 +27,6 @@ public class PassDownloadUtils {
     public static void downloadPass(Context context, Registration registration, Event event, Student student) {
 
         try {
-
             View passView = LayoutInflater.from(context).inflate(R.layout.layout_pass, null, false);
 
             ImageView imgQrCode = passView.findViewById(R.id.imgQrCode);
@@ -63,11 +62,9 @@ public class PassDownloadUtils {
 
             tvPassStatus.setText(registration.getPassStatus());
 
-
             // Generate QR Code
 
             imgQrCode.setImageBitmap(QrCodeUtils.generateQr(registration.getQrData()));
-
 
             // Measure Layout
 
@@ -80,7 +77,6 @@ public class PassDownloadUtils {
             passView.measure(widthSpec, heightSpec);
 
             passView.layout(0, 0, passView.getMeasuredWidth(), passView.getMeasuredHeight());
-
 
             // Create High Resolution Bitmap
 
@@ -97,6 +93,8 @@ public class PassDownloadUtils {
             String fileName = event.getEventName().replaceAll("[^a-zA-Z0-9]", "_") + "_Pass.png";
 
             OutputStream outputStream;
+
+            // Save pass image to Downloads
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 
@@ -142,9 +140,8 @@ public class PassDownloadUtils {
         }
 
         catch (Exception e) {
-
             e.printStackTrace();
-
+            // Failed to save pass image
         }
 
     }

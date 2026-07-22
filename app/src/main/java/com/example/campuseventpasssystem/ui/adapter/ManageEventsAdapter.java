@@ -18,10 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.campuseventpasssystem.R;
 import com.example.campuseventpasssystem.database.DatabaseClient;
 import com.example.campuseventpasssystem.database.entities.Event;
+import com.example.campuseventpasssystem.ui.admin.ManageEventsActivity;
 import com.example.campuseventpasssystem.ui.admin.ParticipantsListActivity;
 import com.example.campuseventpasssystem.ui.admin.AdminEventCardActivity;
+import com.example.campuseventpasssystem.ui.qr.ScanPassActivity;
 
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ManageEventsAdapter extends RecyclerView.Adapter<ManageEventsAdapter.EventViewHolder> {
     private final Context context;
@@ -53,7 +58,42 @@ public class ManageEventsAdapter extends RecyclerView.Adapter<ManageEventsAdapte
 
         holder.tvVenue.setText(event.getEventVenue());
 
-        holder.tvStatus.setText(Event.ACTIVE.equals(event.getEventStatus()) ? R.string.active : R.string.inactive);
+        boolean active = Event.ACTIVE.equals(event.getEventStatus());
+
+        // Check whether the event has already ended
+
+        try {
+            String dateTime = event.getEventDate() + " " + event.getEventTime();
+
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+
+            Date eventDateTime = format.parse(dateTime);
+
+            if (eventDateTime != null && eventDateTime.before(new Date())) {
+
+                active = false;
+
+            }
+
+        } catch (Exception e) {
+
+            active = false;
+
+        }
+
+        if (active) {
+
+            holder.tvStatus.setText(R.string.active);
+
+            holder.tvStatus.setBackgroundResource(R.drawable.status_active_bg);
+
+        } else {
+
+            holder.tvStatus.setText(R.string.inactive);
+
+            holder.tvStatus.setBackgroundResource(R.drawable.status_inactive_bg);
+
+        }
 
         int participants = DatabaseClient.getInstance(context).registrationDao().getParticipantCount(event.getEventId());
 
@@ -74,13 +114,9 @@ public class ManageEventsAdapter extends RecyclerView.Adapter<ManageEventsAdapte
         if (event.getEventBannerUri() != null && !event.getEventBannerUri().isEmpty()) {
 
             try {
-
                 holder.imgBanner.setImageURI(Uri.parse(event.getEventBannerUri()));
-
             } catch (Exception e) {
-
                 holder.imgBanner.setImageResource(R.drawable.default_event_banner);
-
             }
 
         } else {
@@ -94,7 +130,25 @@ public class ManageEventsAdapter extends RecyclerView.Adapter<ManageEventsAdapte
 
         holder.cardRoot.setOnClickListener(v -> {
 
-            Intent intent = new Intent(context, AdminEventCardActivity.class);
+            Intent intent;
+
+            boolean scanMode = false;
+
+            if (context instanceof ManageEventsActivity) {
+
+                scanMode = ((ManageEventsActivity) context).getIntent().getBooleanExtra("SCAN_MODE", false);
+
+            }
+
+            if (scanMode) {
+
+                intent = new Intent(context, ScanPassActivity.class);
+
+            } else {
+
+                intent = new Intent(context, AdminEventCardActivity.class);
+
+            }
 
             intent.putExtra("EVENT_ID", event.getEventId());
 
@@ -114,6 +168,8 @@ public class ManageEventsAdapter extends RecyclerView.Adapter<ManageEventsAdapte
             context.startActivity(intent);
 
         });
+
+        // Delete Event
 
         holder.cardRoot.setOnLongClickListener(v -> {
 

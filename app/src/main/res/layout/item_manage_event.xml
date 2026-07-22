@@ -22,8 +22,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ================= TOP ================= -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,10 +62,12 @@
                         android:maxLines="2"
                         android:ellipsize="end"
                         android:text=""
-                        tools:text="@string/venue"
+                        tools:text="@string/event_name"
                         android:textColor="#2F2346"
                         android:textSize="22sp"
                         android:textStyle="bold"/>
+
+                    <!-- Status Tag -->
 
                     <TextView
                         android:id="@+id/tvStatus"
@@ -83,7 +83,7 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <!-- Date -->
+                <!-- Date and Time -->
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
             android:layout_height="1dp"
             android:background="#ECECEC"/>
 
-        <!-- Bottom -->
+        <!-- Bottom Row -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -164,6 +164,7 @@
                     android:src="@drawable/baseline_groups_24"
                     app:tint="#0D8B8B"/>
 
+                <!-- Registration Count -->
                 <TextView
                     android:id="@+id/tvParticipants"
                     android:layout_width="wrap_content"
@@ -174,6 +175,8 @@
                     android:textColor="#4A4A4A"
                     android:textSize="15sp"/>
             </LinearLayout>
+
+            <!-- View Participants -->
 
             <TextView
                 android:id="@+id/tvViewParticipants"

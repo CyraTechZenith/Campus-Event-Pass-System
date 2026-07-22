@@ -9,9 +9,6 @@ import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,7 +47,15 @@ public class ManageEventsActivity extends AppCompatActivity {
 
         rvEvents.setLayoutManager(new LinearLayoutManager(this));
 
+        // ==========================
+        // Back
+        // ==========================
+
         btnBack.setOnClickListener(v -> finish());
+
+        // ==========================
+        // Create Event
+        // ==========================
 
         View.OnClickListener createListener = v -> {
 
@@ -64,14 +69,26 @@ public class ManageEventsActivity extends AppCompatActivity {
 
         btnCreateEventBottom.setOnClickListener(createListener);
 
+        // ==========================
+        // Load Events
+        // ==========================
+
         loadEvents();
     }
+
+    // ==========================
+    // Refresh Events
+    // ==========================
 
     @Override
     protected void onResume() {
         super.onResume();
         loadEvents();
     }
+
+    // ==========================
+    // Load Events
+    // ==========================
 
     private void loadEvents() {
 

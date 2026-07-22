@@ -24,7 +24,6 @@ import com.example.campuseventpasssystem.utils.SessionManager;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -42,6 +41,9 @@ public class RegisterEventActivity extends AppCompatActivity {
     private Student student;
     private Event event;
     private int eventId;
+    private boolean alreadyRegistered = false;
+    private boolean registrationClosed = false;
+    private boolean eventFull = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +77,23 @@ public class RegisterEventActivity extends AppCompatActivity {
 
         event = DatabaseClient.getInstance(getApplicationContext()).eventDao().getEventById(eventId);
 
+        // ==========================
+        // Load Student
+        // ==========================
+
         loadStudent();
 
         loadEvent();
 
+        // ==========================
+        // Update Register Button
+        // ==========================
+
         updateRegisterButton();
+
+        // ==========================
+        // Button Actions
+        // ==========================
 
         btnBack.setOnClickListener(v -> finish());
 
@@ -87,11 +101,39 @@ public class RegisterEventActivity extends AppCompatActivity {
 
         btnRegister.setOnClickListener(v -> {
 
+            if (alreadyRegistered) {
+
+                Toast.makeText(this, R.string.already_registered, Toast.LENGTH_SHORT).show();
+
+                return;
+
+            }
+
+            if (registrationClosed) {
+
+                Toast.makeText(this, R.string.event_over, Toast.LENGTH_SHORT).show();
+
+                return;
+
+            }
+
+            if (eventFull) {
+
+                Toast.makeText(this, R.string.event_full, Toast.LENGTH_SHORT).show();
+
+                return;
+
+            }
+
             registerStudent();
 
         });
 
     }
+
+    // ==========================
+    // Load Data
+    // ==========================
 
     private void loadStudent() {
 
@@ -179,44 +221,36 @@ public class RegisterEventActivity extends AppCompatActivity {
 
         int participationLimit = event.getParticipationLimit();
 
-        int existingRegistration = DatabaseClient.getInstance(getApplicationContext()).registrationDao().getRegistrationCount(student.getRollNumber(), eventId);
+        alreadyRegistered = DatabaseClient.getInstance(getApplicationContext()).registrationDao().getRegistrationCount(student.getRollNumber(), eventId) > 0;
 
-        boolean registrationClosed = false;
+        registrationClosed = false;
 
         try {
+            String dateTime = event.getEventDate() + " " + event.getEventTime();
 
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
 
-            Date eventDate = format.parse(event.getEventDate());
+            Date eventDateTime = format.parse(dateTime);
 
-            Calendar today = Calendar.getInstance();
-
-            today.set(Calendar.HOUR_OF_DAY, 0);
-            today.set(Calendar.MINUTE, 0);
-            today.set(Calendar.SECOND, 0);
-            today.set(Calendar.MILLISECOND, 0);
-
-            if (eventDate.before(today.getTime())) {
+            if (eventDateTime != null && eventDateTime.before(new Date())) {
 
                 registrationClosed = true;
 
             }
 
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
 
             registrationClosed = true;
 
         }
 
-        if (participantCount >= participationLimit) {
+        eventFull = participationLimit > 0 && participantCount >= participationLimit;
 
-            btnRegister.setEnabled(false);
+        if (alreadyRegistered) {
 
             btnRegister.setBackgroundResource(R.drawable.rounded_disabled_button);
 
-            btnRegister.setText("Registrations Closed\\n(Event Full)");
+            btnRegister.setText(R.string.already_registered);
 
             return;
 
@@ -224,27 +258,28 @@ public class RegisterEventActivity extends AppCompatActivity {
 
         if (registrationClosed) {
 
-            btnRegister.setEnabled(false);
-
             btnRegister.setBackgroundResource(R.drawable.rounded_disabled_button);
 
-            btnRegister.setText(R.string.registration_closed);
+            btnRegister.setText(R.string.event_ended);
 
             return;
 
         }
 
-        if (existingRegistration > 0) {
-
-            btnRegister.setEnabled(false);
+        if (eventFull) {
 
             btnRegister.setBackgroundResource(R.drawable.rounded_disabled_button);
 
-            btnRegister.setText(R.string.already_registered);
+            btnRegister.setText(R.string.event_full);
+
+            return;
 
         }
-
     }
+
+    // ==========================
+    // Register Student
+    // ==========================
 
     private void registerStudent() {
 

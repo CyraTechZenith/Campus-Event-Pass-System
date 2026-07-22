@@ -34,6 +34,11 @@ public class VerificationResultActivity extends AppCompatActivity {
 
         ImageView btnBack = findViewById(R.id.btnBack);
 
+        // ==========================
+        // Back
+        // ==========================
+
+
         btnBack.setOnClickListener(v -> finish());
 
         String status = getIntent().getStringExtra("status");
@@ -56,6 +61,10 @@ public class VerificationResultActivity extends AppCompatActivity {
         }
 
         tvDetails.setText(details);
+
+        // ==========================
+        // Scan Again
+        // ==========================
 
         btnScanAgain.setOnClickListener(v -> {
 

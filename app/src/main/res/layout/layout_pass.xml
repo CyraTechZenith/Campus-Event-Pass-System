@@ -16,6 +16,8 @@
         android:padding="24dp"
         android:background="#201A35">
 
+        <!-- Logo -->
+
             <ImageView
                 android:id="@+id/imgUniversityLogo"
                 android:layout_width="96dp"
@@ -23,6 +25,8 @@
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/logo"
                 android:src="@drawable/uni_logo" />
+
+        <!-- Event Name -->
 
             <TextView
                 android:id="@+id/tvEventName"
@@ -126,6 +130,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="24dp"/>
 
+            <!-- Student Name -->
+
             <TextView
                 android:id="@+id/tvStudentName"
                 android:layout_width="wrap_content"
@@ -135,6 +141,8 @@
                 android:textSize="28sp"
                 android:textStyle="bold"/>
 
+            <!-- Roll -->
+
             <TextView
                 android:id="@+id/tvRollNumber"
                 android:layout_width="wrap_content"
@@ -143,6 +151,8 @@
                 android:text="@string/roll_number_format"
                 android:textColor="#CCCCCC"
                 android:textSize="16sp"/>
+
+            <!-- QR Code -->
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="220dp"
@@ -161,7 +171,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PASS STATUS -->
+            <!-- Pass Status -->
 
             <TextView
                 android:id="@+id/tvPassStatus"

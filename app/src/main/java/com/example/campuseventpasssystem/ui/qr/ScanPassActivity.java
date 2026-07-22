@@ -1,7 +1,6 @@
 package com.example.campuseventpasssystem.ui.qr;
 
 import android.os.Bundle;
-import android.widget.TextView;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.app.AlertDialog;
@@ -11,9 +10,6 @@ import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -39,6 +35,10 @@ public class ScanPassActivity extends AppCompatActivity {
         checkCameraPermission();
     }
 
+    // ==========================
+    // Camera Permission
+    // ==========================
+
     private void checkCameraPermission() {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
@@ -52,6 +52,10 @@ public class ScanPassActivity extends AppCompatActivity {
         }
 
     }
+
+    // ==========================
+    // Start Scanner
+    // ==========================
 
     private void startScanner() {
 
@@ -140,6 +144,10 @@ public class ScanPassActivity extends AppCompatActivity {
 
                 .setNegativeButton(R.string.cancel, null).show();
     }
+
+    // ==========================
+    // Verify Pass
+    // ==========================
 
     private void verifyPass(String qrData) {
 

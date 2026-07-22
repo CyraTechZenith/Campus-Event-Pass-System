@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FEF8FB">
 
-    <!-- ================= TOP BAR ================= -->
+    <!-- Top Bar -->
 
     <FrameLayout
         android:id="@+id/topBar"
@@ -25,6 +25,8 @@
             android:src="@drawable/baseline_arrow_back_24"
             app:tint="@android:color/white"/>
 
+        <!-- Page Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +39,7 @@
 
     </FrameLayout>
 
-    <!-- ================= RECYCLER VIEW ================= -->
+    <!-- Recycler View -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEvents"
@@ -49,7 +51,7 @@
         android:paddingBottom="110dp"
         android:clipToPadding="false"/>
 
-    <!-- ================= EMPTY VIEW ================= -->
+    <!-- Empty View -->
 
     <LinearLayout
         android:id="@+id/layoutEmpty"
@@ -84,6 +86,8 @@
             android:textSize="16sp"
             android:textColor="#9A8FB5"/>
 
+        <!-- Create Button -->
+
         <Button
             android:id="@+id/btnCreateEvent"
             android:layout_width="match_parent"
@@ -100,7 +104,7 @@
 
     </LinearLayout>
 
-    <!-- ================= FLOATING CREATE BUTTON ================= -->
+    <!-- Floating Create Button -->
 
     <Button
         android:id="@+id/btnCreateEventBottom"

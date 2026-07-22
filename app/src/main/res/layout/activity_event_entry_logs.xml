@@ -11,9 +11,7 @@
     android:background="#FEF8FB"
     tools:context=".ui.event.EventEntryLogsActivity">
 
-    <!-- ========================= -->
     <!-- Top Bar -->
-    <!-- ========================= -->
 
     <FrameLayout
         android:id="@+id/topBar"
@@ -34,6 +32,8 @@
             android:src="@drawable/baseline_arrow_back_24"
             app:tint="@android:color/white"/>
 
+        <!-- Page Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,9 +46,7 @@
 
     </FrameLayout>
 
-    <!-- ========================= -->
     <!-- Search Bar -->
-    <!-- ========================= -->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/searchCard"
@@ -101,9 +99,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- ========================= -->
     <!-- Filter Chips -->
-    <!-- ========================= -->
 
     <LinearLayout
         android:id="@+id/layoutFilters"
@@ -117,6 +113,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- All -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAll"
             android:layout_width="0dp"
@@ -129,6 +127,8 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textStyle="bold"/>
+
+        <!-- Verified -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnVerified"
@@ -145,6 +145,8 @@
             android:textColor="#2E7D32"
             android:textStyle="bold"
             android:textSize="15sp"/>
+
+        <!-- Failed -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFailed"
@@ -164,9 +166,7 @@
 
     </LinearLayout>
 
-    <!-- ========================= -->
     <!-- Section Header -->
-    <!-- ========================= -->
 
     <LinearLayout
         android:id="@+id/headerToday"
@@ -206,6 +206,8 @@
 
         </LinearLayout>
 
+        <!-- Entry Count -->
+
         <TextView
             android:id="@+id/tvEntryCount"
             android:layout_width="wrap_content"
@@ -217,9 +219,7 @@
 
     </LinearLayout>
 
-    <!-- ========================= -->
     <!-- Entry List -->
-    <!-- ========================= -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEntryLogs"
@@ -235,9 +235,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- ========================= -->
     <!-- Empty State -->
-    <!-- ========================= -->
 
     <LinearLayout
         android:id="@+id/layoutEmpty"

@@ -7,12 +7,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,7 +19,6 @@ import com.example.campuseventpasssystem.database.DatabaseClient;
 import com.example.campuseventpasssystem.database.entities.Event;
 import com.example.campuseventpasssystem.ui.adapter.ManageEventsAdapter;
 import com.example.campuseventpasssystem.ui.event.CreateEventActivity;
-import com.example.campuseventpasssystem.ui.qr.ScanPassActivity;
 
 import java.util.List;
 
@@ -38,6 +35,10 @@ public class AdminDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admin_dashboard);
+
+        // ==========================
+        // Initialize Views
+        // ==========================
 
         btnCreateEvent = findViewById(R.id.btnCreateEvent);
 
@@ -72,7 +73,11 @@ public class AdminDashboardActivity extends AppCompatActivity {
 
         btnScanQr.setOnClickListener(v -> {
 
-            Intent intent = new Intent(AdminDashboardActivity.this, ScanPassActivity.class);
+            Toast.makeText(this, R.string.select_an_event_to_scan_qr, Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(AdminDashboardActivity.this, ManageEventsActivity.class);
+
+            intent.putExtra("SCAN_MODE", true);
 
             startActivity(intent);
 
@@ -104,6 +109,9 @@ public class AdminDashboardActivity extends AppCompatActivity {
 
         });
 
+        // ==========================
+        // Load Active Events
+        // ==========================
 
         loadActiveEvents();
 

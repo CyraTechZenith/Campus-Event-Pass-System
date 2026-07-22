@@ -9,12 +9,12 @@
     android:background="#FCF7FF"
     android:fillViewport="true">
 
+    <!-- Top Bar -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <!-- ================= HEADER ================= -->
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -32,6 +32,8 @@
                 android:src="@drawable/baseline_arrow_back_24"
                 app:tint="@android:color/white"/>
 
+            <!-- Page Title -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +47,7 @@
 
         </FrameLayout>
 
-        <!-- ================= BODY ================= -->
+        <!-- Body -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,7 +129,7 @@
                 android:layout_marginTop="24dp"
                 android:background="#E5E5E5" />
 
-            <!-- ================= CONTACT DETAILS ================= -->
+            <!-- Contact Details -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,6 +177,8 @@
                         android:paddingHorizontal="16dp"
                         app:drawableTint="#F65AA5" />
 
+                    <!-- Contact Number -->
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -202,13 +206,15 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ================= BUTTONS ================= -->
+            <!-- Buttons -->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:orientation="horizontal">
+
+                <!-- Cancel Button -->
 
                 <Button
                     android:id="@+id/btnCancel"
@@ -224,6 +230,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:backgroundTint="@null" />
+
+                <!-- Register Button -->
 
                 <Button
                     android:id="@+id/btnRegister"

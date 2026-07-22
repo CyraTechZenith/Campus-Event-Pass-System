@@ -40,20 +40,34 @@ public class MyRegistrationsActivity extends AppCompatActivity {
 
         rvRegistrations.setLayoutManager(new LinearLayoutManager(this));
 
+        // ==========================
+        // Back
+        // ==========================
+
         btnBack.setOnClickListener(v -> finish());
+
+        // ==========================
+        // Load Registrations
+        // ==========================
 
         loadRegistrations();
 
     }
+
+
+    // ==========================
+    // Refresh Registrations
+    // ==========================
 
     @Override
     protected void onResume() {
-
         super.onResume();
-
         loadRegistrations();
-
     }
+
+    // ==========================
+    // Load Registrations
+    // ==========================
 
     private void loadRegistrations() {
 

@@ -64,9 +64,21 @@ public class StudentProfileActivity extends AppCompatActivity {
 
         tvInitials = findViewById(R.id.tvInitials);
 
+        // ==========================
+        // Load Student
+        // ==========================
+
         loadStudent();
 
+        // ==========================
+        // Initialize Image Picker
+        // ==========================
+
         initialiseImagePicker();
+
+        // ==========================
+        // Button Actions
+        // ==========================
 
         btnBack.setOnClickListener(v -> finish());
 
@@ -85,6 +97,10 @@ public class StudentProfileActivity extends AppCompatActivity {
         });
 
     }
+
+    // ==========================
+    // Load Student
+    // ==========================
 
     private void loadStudent() {
 
@@ -111,13 +127,9 @@ public class StudentProfileActivity extends AppCompatActivity {
             tvInitials.setVisibility(View.GONE);
 
             try {
-
                 imgProfile.setImageURI(Uri.fromFile(new File(student.getProfileImageUri())));
-
             } catch (Exception e) {
-
                 imgProfile.setImageResource(R.drawable.baseline_account_circle_24);
-
             }
 
         } else {
@@ -138,6 +150,10 @@ public class StudentProfileActivity extends AppCompatActivity {
         }
 
     }
+
+    // ==========================
+    // Initialize Image Picker
+    // ==========================
 
     private void initialiseImagePicker() {
 
@@ -163,11 +179,13 @@ public class StudentProfileActivity extends AppCompatActivity {
 
     }
 
+    // ==========================
+    // Save Image
+    // ==========================
 
     private String saveImageToInternalStorage(Uri uri) {
 
         try {
-
             InputStream inputStream = getContentResolver().openInputStream(uri);
 
             File file = new File(getFilesDir(), "profile_" + rollNumber + ".jpg");
@@ -199,6 +217,10 @@ public class StudentProfileActivity extends AppCompatActivity {
         }
 
     }
+
+    // ==========================
+    // Change Password
+    // ==========================
 
     private void showChangePasswordDialog() {
 

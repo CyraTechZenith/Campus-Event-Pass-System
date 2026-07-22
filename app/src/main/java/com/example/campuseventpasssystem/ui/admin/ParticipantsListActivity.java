@@ -6,7 +6,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +36,10 @@ public class ParticipantsListActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_participants_list);
 
+        // ==========================
+        // Initialize Views
+        // ==========================
+
         btnBack = findViewById(R.id.btnBack);
 
         tvParticipantCount = findViewById(R.id.tvParticipantCount);
@@ -62,7 +65,15 @@ public class ParticipantsListActivity extends AppCompatActivity {
 
         rvParticipants.setAdapter(adapter);
 
+        // ==========================
+        // Back
+        // ==========================
+
         btnBack.setOnClickListener(v -> finish());
+
+        // ==========================
+        // Search
+        // ==========================
 
         etSearch.addTextChangedListener(new TextWatcher() {
 
@@ -83,6 +94,10 @@ public class ParticipantsListActivity extends AppCompatActivity {
 
         });
     }
+
+    // ==========================
+    // Filter Participants
+    // ==========================
 
     private void filterParticipants(String query) {
 

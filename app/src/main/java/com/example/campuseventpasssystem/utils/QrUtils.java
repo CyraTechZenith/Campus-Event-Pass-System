@@ -7,7 +7,6 @@ public class QrUtils {
     }
 
     public static String generateQrData(String rollNumber, int eventId) {
-
         return rollNumber + "_" + eventId + "_" + System.currentTimeMillis();
     }
 }

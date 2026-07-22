@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:background="#FCF7FF">
 
-    <!-- Header -->
+    <!-- Top Bar -->
 
     <FrameLayout
         android:id="@+id/topBar"
@@ -26,6 +26,8 @@
             android:padding="6dp"
             android:src="@drawable/baseline_arrow_back_24"
             app:tint="@android:color/white"/>
+
+        <!-- Page Title -->
 
         <TextView
             android:layout_width="wrap_content"
@@ -74,7 +76,7 @@
 
     </LinearLayout>
 
-    <!-- Count -->
+    <!-- Participant Count -->
 
     <TextView
         android:id="@+id/tvParticipantCount"

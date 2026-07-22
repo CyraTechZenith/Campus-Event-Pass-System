@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +18,6 @@ import android.graphics.Color;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -84,8 +80,6 @@ public class EventEntryLogsActivity extends AppCompatActivity {
         adapter = new EntryLogAdapter(this, filteredLogs);
 
         rvEntryLogs.setAdapter(adapter);
-
-        filterLogs("");
 
         btnBack.setOnClickListener(v -> finish());
 
@@ -247,6 +241,10 @@ public class EventEntryLogsActivity extends AppCompatActivity {
 
     }
 
+    // ==========================
+    // Filter Buttons
+    // ==========================
+
     private void updateFilterButtons(Button selectedButton) {
 
         Button[] buttons = {btnAll, btnVerified, btnFailed};
@@ -276,7 +274,7 @@ public class EventEntryLogsActivity extends AppCompatActivity {
 
         Context wrapper = new ContextThemeWrapper(this, R.style.PopupMenuStyle);
 
-        PopupMenu popupMenu = new PopupMenu(wrapper, btnFilter);
+        PopupMenu popupMenu = new PopupMenu(wrapper, anchor);
 
         popupMenu.getMenu().add(0, 1, 0, getString(R.string.newest_first));
 
